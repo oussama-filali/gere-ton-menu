@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du Menu Restaurant</title>
+    <link rel="stylesheet" href="gestionnaire de menu .css">
+</head>
+
+<body>
+    <!-- Page de connexion -->
+    <section id="login">
+        <div class="container">
+            <h2>Connexion Restaurateur</h2>
+            <form action="/login" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Votre email">
+
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
+
+                <button type="submit">Se connecter</button>
+            </form>
+            <p>Pas encore de compte? <a href="/signup">S'inscrire</a></p>
+        </div>
+    </section>
+
+    <!-- Page principale après connexion -->
+    <section id="dashboard" class="hidden">
+        <div class="container">
+            <h1>Tableau de bord du Restaurateur</h1>
+
+            <!-- Formulaire pour ajouter un plat -->
+            <h2>Ajouter un Plat</h2>
+            <form action="/add-dish" method="POST" enctype="multipart/form-data">
+                <label for="dish-name">Nom du plat:</label>
+                <input type="text" id="dish-name" name="name" required placeholder="Nom du plat">
+
+                <label for="dish-description">Description:</label>
+                <textarea id="dish-description" name="description" required placeholder="Description du plat"></textarea>
+
+                <label for="dish-price">Prix:</label>
+                <input type="number" id="dish-price" name="price" required placeholder="Prix du plat">
+
+                <label for="dish-category">Catégorie:</label>
+                <select id="dish-category" name="category" required>
+                    <option value="entree">Entrée</option>
+                    <option value="plat_principal">Plat principal</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+
+                <label for="dish-image">Image:</label>
+                <input type="file" id="dish-image" name="image" accept="image/*">
+
+                <button type="submit">Ajouter le plat</button>
+            </form>
+
+            <!-- Formulaire pour ajouter un menu -->
+            <h2>Ajouter un Menu</h2>
+            <form action="/add-menu" method="POST">
+                <label for="menu-name">Nom du menu:</label>
+                <input type="text" id="menu-name" name="name" required placeholder="Nom du menu">
+
+                <label for="menu-description">Description:</label>
+                <textarea id="menu-description" name="description" required placeholder="Description du menu"></textarea>
+
+                <label for="menu-dishes">Choisir des plats pour ce menu:</label>
+                <select id="menu-dishes" name="dishes" multiple required>
+                    <option value="dish1">Plat 1</option>
+                    <option value="dish2">Plat 2</option>
+                    <option value="dish3">Plat 3</option>
+                </select>
+
+                <button type="submit">Ajouter le menu</button>
+            </form>
+
+            <!-- Formulaire pour ajouter une catégorie -->
+            <h2>Ajouter une Catégorie</h2>
+            <form action="/add-category" method="POST">
+                <label for="category-name">Nom de la catégorie:</label>
+                <input type="text" id="category-name" name="name" required placeholder="Nom de la catégorie">
+
+                <button type="submit">Ajouter la catégorie</button>
+            </form>
+
+            <!-- Liste des plats existants -->
+            <h2>Liste des Plats</h2>
+            <ul id="dish-list">
+                <li>Plat 1 <button class="delete-btn">Supprimer</button></li>
+                <li>Plat 2 <button class="delete-btn">Supprimer</button></li>
+                <li>Plat 3 <button class="delete-btn">Supprimer</button></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="javaScript.js"></script>
+</body>
+
+</html>
