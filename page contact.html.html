@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mon Restaurant</title>
+    <link rel="stylesheet" href="contact.css"> <!-- Lien vers votre feuille de style -->
+</head>
+
+<body>
+
+    <!-- En-tête de la page -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section principale de la page Contact -->
+    <main>
+        <section class="contact-form">
+            <h1>Contactez-nous</h1>
+            <p>Vous avez des questions ? Remplissez le formulaire ci-dessous pour nous contacter, nous nous ferons un plaisir de vous répondre.</p>
+
+            <!-- Formulaire de contact -->
+            <form action="envoyer_message.php" method="POST">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="sujet">Sujet :</label>
+                <input type="text" id="sujet" name="sujet" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+
+        <!-- Informations de contact supplémentaires -->
+        <section class="contact-info">
+            <h2>Nos Coordonnées</h2>
+            <p><strong>Adresse :</strong> 123 Rue de la Gastronomie, Paris, France</p>
+            <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+            <p><strong>Email :</strong> contact@monrestaurant.com</p>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 Mon Restaurant. Tous droits réservés.</p>
+    </footer>
+
+</body>
+
+</html>
+
