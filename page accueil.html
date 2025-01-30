@@ -1,28 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="page accueil.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
-    <title>Accueil</title>
+    <title>Gère Ton Menu</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <h1>Restaurant</h1>
-                <ul>
-                    <li><a href="page accueil.html">Accueil</a></li>
-                    <li><a href="page contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Slider en arrière-plan -->
+    <div class="slider">
+        <div class="slide active" style="background-image: url('plate-2802332_1280.jpg')"></div>
+        <div class="slide" style="background-image: url('plat.png')"></div>
+        <div class="slide" style="background-image: url('cake-8342822_1280.webp')"></div>
+    </div>
 
+    <!-- Navbar avec logo centré -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo appli.webp" alt="Logo" class="logo">
+        </div>
+        <div class="nav-links">
+            <a href="#accueil.html">Accueil</a>
+            <a href="login.php" onclick="ouvrirModale()">Connexion</a>
+            <a href="#contact.html">Contact</a>
+            <a href="#aide.html">Aide</a>
+
+        </div>
+        <div class="hamburger">☰</div>
+    </nav>
+
+    <!-- Modale Connexion/Inscription -->
+    <div id="modale" class="modale-overlay">
+        <div class="modale-contenu">
+            <span class="fermer" onclick="fermerModale()">×</span>
+            <h2 id="titre-modale">Connexion</h2>
+
+            <!-- Formulaire Connexion -->
+            <form id="form-connexion" action="login.php" method="POST">
+                <label>Email :</label>
+                <input type="email" name="email" required>
+            
+                <label>Mot de passe :</label>
+                <input type="password" name="password" required>
+            
+                <button type="submit">Se connecter</button>
+            </form>
+
+            <!-- Formulaire Inscription -->
+            <form id="form-inscription" style="display: none;">
+                <label>Nom :</label>
+                <input type="text" required>
+
+                <label>Email :</label>
+                <input type="email" required>
+
+                <label>Mot de passe :</label>
+                <input type="password" required>
                 
-    
-    
+                <button type="submit">S'inscrire</button>
+            </form>
+
+            <p id="switch-form">
+                Pas encore inscrit ? <a href="#" onclick="changerFormulaire()">Créer un compte</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
